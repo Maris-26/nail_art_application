@@ -1,4 +1,4 @@
-## 💅 Nail Art Application – Developer Project Plan
+## 💅 Naily – Developer Project Plan
 
 ### 🎯 Project Scope  
 This project aims to build a web application that curates a wide variety of nail art designs and recommends personalized styles based on user interactions. Inspired by platforms like Red Note and beauty e-commerce filters, the app will use a fixed tag system (e.g., color, shape, season) to support search and recommendations. Machine learning will operate on user behavior data—such as searches, likes, and collections—to deliver personalized content. Tag vectors (not image data) will be the foundation of all ML logic. The system will also log interaction-tag pairs to enable future trend dashboards. Copyright is not a concern due to the non-commercial, educational nature of this project.
