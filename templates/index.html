@@ -3,16 +3,209 @@
 {% block title %}Home - Nail Art Recommendation{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1>Welcome to Nail Art Recommendation</h1>
-    <div class="search-section">
-        <!-- Search bar will go here -->
+<!-- Filter Sidebar -->
+<div class="filter-sidebar" id="filterSidebar">
+    <div class="filter-header">
+        <h2><i class="fas fa-sliders-h"></i> Search & Filters</h2>
+        <button class="close-filters" id="closeFilters">
+            <i class="fas fa-times"></i>
+        </button>
     </div>
-    <div class="filters-section">
-        <!-- Filters will go here -->
+    
+    <div class="search-in-filter">
+        <input type="text" placeholder="Search designs...">
+        <button type="submit">
+            <i class="fas fa-search"></i>
+        </button>
     </div>
-    <div class="gallery-section">
-        <!-- Image gallery will go here -->
+
+    <div class="filters-content">
+        <div class="filter-group">
+            <h3>Nail Shape</h3>
+            <div class="filter-options">
+                <label class="filter-option">
+                    <input type="checkbox" name="shape" value="almond">
+                    <span>Almond</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" name="shape" value="square">
+                    <span>Square</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" name="shape" value="coffin">
+                    <span>Coffin</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" name="shape" value="stiletto">
+                    <span>Stiletto</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <h3>Style</h3>
+            <div class="filter-options">
+                <label class="filter-option">
+                    <input type="checkbox" name="style" value="minimalist">
+                    <span>Minimalist</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" name="style" value="floral">
+                    <span>Floral</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" name="style" value="geometric">
+                    <span>Geometric</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" name="style" value="abstract">
+                    <span>Abstract</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <h3>Color</h3>
+            <div class="filter-options color-options">
+                <label class="color-option">
+                    <input type="checkbox" name="color" value="pink">
+                    <span class="color-dot pink"></span>
+                    <span>Pink</span>
+                </label>
+                <label class="color-option">
+                    <input type="checkbox" name="color" value="purple">
+                    <span class="color-dot purple"></span>
+                    <span>Purple</span>
+                </label>
+                <label class="color-option">
+                    <input type="checkbox" name="color" value="nude">
+                    <span class="color-dot nude"></span>
+                    <span>Nude</span>
+                </label>
+                <label class="color-option">
+                    <input type="checkbox" name="color" value="red">
+                    <span class="color-dot red"></span>
+                    <span>Red</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <h3>Occasion</h3>
+            <div class="filter-options">
+                <label class="filter-option">
+                    <input type="checkbox" name="occasion" value="wedding">
+                    <span>Wedding</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" name="occasion" value="party">
+                    <span>Party</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" name="occasion" value="casual">
+                    <span>Casual</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" name="occasion" value="holiday">
+                    <span>Holiday</span>
+                </label>
+            </div>
+        </div>
     </div>
 </div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <div class="container">
+        <!-- Top Bar with Search and Filter Toggle -->
+        <div class="top-bar">
+            <div class="search-wrapper">
+                <button class="filter-toggle" id="openFilters">
+                    <i class="fas fa-sliders-h"></i>
+                    Filters
+                </button>
+                <div class="main-search-bar">
+                    <input type="text" placeholder="Search nail art designs...">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <section class="hero-section">
+            <h1>Discover Your Perfect Nail Art Style</h1>
+            <p>Explore thousands of designs and find inspiration for your next manicure</p>
+        </section>
+
+        <section class="gallery-section">
+            <div class="gallery-grid">
+                {% for i in range(8) %}
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500&auto=format" alt="Pink Nail Art Design">
+                        <div class="gallery-overlay">
+                            <button class="like-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="save-btn">
+                                <i class="far fa-bookmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Beautiful Nail Design</h3>
+                        <div class="gallery-tags">
+                            <span class="tag">Minimalist</span>
+                            <span class="tag">Pink</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="load-more">
+                <button class="load-more-btn">Load More</button>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Filter sidebar toggle
+        const filterSidebar = document.getElementById('filterSidebar');
+        const openFiltersBtn = document.getElementById('openFilters');
+        const closeFiltersBtn = document.getElementById('closeFilters');
+
+        openFiltersBtn.addEventListener('click', function() {
+            filterSidebar.classList.add('active');
+        });
+
+        closeFiltersBtn.addEventListener('click', function() {
+            filterSidebar.classList.remove('active');
+        });
+
+        // Like button functionality
+        document.querySelectorAll('.like-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                icon.classList.toggle('far');
+                icon.classList.toggle('fas');
+                icon.classList.toggle('liked');
+            });
+        });
+
+        // Save button functionality
+        document.querySelectorAll('.save-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                icon.classList.toggle('far');
+                icon.classList.toggle('fas');
+                icon.classList.toggle('saved');
+            });
+        });
+    });
+</script>
 {% endblock %} 
