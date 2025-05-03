@@ -4,6 +4,16 @@ A web application that curates a wide range of nail art styles and helps users e
 
 ---
 
+## 🆕 Recent Progress (June 2024)
+
+- Integrated Unsplash API: homepage now displays real nail art images from Unsplash in real time.
+- Each image is shown with an auto-generated descriptive title (or fallback to "Beautiful Nail Art #n").
+- Tags for each image are automatically generated based on the image description and match the filter categories (style, color, occasion).
+- Homepage template updated to render dynamic images, titles, and tags from the API.
+- **Collection feature:** Users can click the bookmark icon on the homepage to add a nail art to their collection. The collection page displays all saved items, and users can remove items from their collection with a single click. Collection state is stored in the user session (no login required).
+
+---
+
 ## 📌 Project Scope
 
 This project aims to build a web application that collects and organizes a wide range of nail art styles from the internet. Users will be able to browse, search, filter, and save nail art designs, while receiving personalized recommendations powered by a lightweight machine learning model.
@@ -105,6 +115,14 @@ nail_art_application/
 ├── requirements.txt   # Project dependencies
 └── README.md         # Project documentation
 ```
+
+### Unsplash API Integration
+
+- Integrated Unsplash API: homepage now displays real nail art images from Unsplash in real time.
+- Each image is shown with an auto-generated descriptive title (or fallback to "Beautiful Nail Art #n").
+- Tags for each image are automatically generated based on the image description and match the filter categories (style, color, occasion).
+- Homepage template updated to render dynamic images, titles, and tags from the API.
+- **Collection feature:** Users can click the bookmark icon on the homepage to add a nail art to their collection. The collection page displays all saved items, and users can remove items from their collection with a single click. Collection state is stored in the user session (no login required).
 
 ### Notes
 - The virtual environment (`venv/`) is excluded from version control via `.gitignore`

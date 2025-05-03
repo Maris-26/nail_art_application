@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}My Collections - Nail Art{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <div class="container">
+        <section class="hero-section">
+            <h1>My Collections</h1>
+            <p>Organize and view your favorite nail art designs in different folders.</p>
+        </section>
+        <section class="collections-section">
+            <div class="collections-list">
+                {% for folder in all_collections %}
+                <div class="collection-folder">
+                    <div class="folder-header" style="display: flex; align-items: center; justify-content: space-between;">
+                        <h2>{{ folder.name }}</h2>
+                        <div class="folder-actions">
+                            <button class="edit-folder-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                            <button class="delete-folder-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="gallery-grid">
+                        {% for item in folder["items"] %}
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <img src="{{ item.img }}" alt="{{ item.title }}">
+                                <div class="gallery-overlay">
+                                    <form method="post" action="{{ url_for('main.uncollect') }}">
+                                        <input type="hidden" name="nail_id" value="{{ item.id }}">
+                                        <button type="submit" class="save-btn">
+                                            <i class="fas fa-bookmark"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="gallery-info">
+                                <h3>{{ item.title }}</h3>
+                                <div class="gallery-tags">
+                                    {% for tag in item.tags %}
+                                        <span class="tag">{{ tag }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="add-folder-section" style="margin-top: 2rem;">
+                <button class="load-more-btn">+ Add New Collection Folder</button>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}

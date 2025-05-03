@@ -140,24 +140,29 @@
 
         <section class="gallery-section">
             <div class="gallery-grid">
-                {% for i in range(8) %}
+                {% for item in nail_arts %}
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500&auto=format" alt="Pink Nail Art Design">
+                        <img src="{{ item.img }}" alt="{{ item.title }}">
                         <div class="gallery-overlay">
-                            <button class="like-btn">
-                                <i class="far fa-heart"></i>
-                            </button>
-                            <button class="save-btn">
-                                <i class="far fa-bookmark"></i>
-                            </button>
+                            <form method="post" action="{% if item.id in collections %}{{ url_for('main.uncollect') }}{% else %}{{ url_for('main.collect') }}{% endif %}">
+                                <input type="hidden" name="nail_id" value="{{ item.id }}">
+                                <button type="submit" class="save-btn">
+                                    {% if item.id in collections %}
+                                        <i class="fas fa-bookmark"></i>
+                                    {% else %}
+                                        <i class="far fa-bookmark"></i>
+                                    {% endif %}
+                                </button>
+                            </form>
                         </div>
                     </div>
                     <div class="gallery-info">
-                        <h3>Beautiful Nail Design</h3>
+                        <h3>{{ item.title }}</h3>
                         <div class="gallery-tags">
-                            <span class="tag">Minimalist</span>
-                            <span class="tag">Pink</span>
+                            {% for tag in item.tags %}
+                                <span class="tag">{{ tag }}</span>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
