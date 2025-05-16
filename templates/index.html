@@ -6,37 +6,30 @@
 <!-- Filter Sidebar -->
 <div class="filter-sidebar" id="filterSidebar">
     <div class="filter-header">
-        <h2><i class="fas fa-sliders-h"></i> Search & Filters</h2>
+        <h2><i class="fas fa-sliders-h"></i> Filters</h2>
         <button class="close-filters" id="closeFilters">
             <i class="fas fa-times"></i>
         </button>
     </div>
     
-    <div class="search-in-filter">
-        <input type="text" placeholder="Search designs...">
-        <button type="submit">
-            <i class="fas fa-search"></i>
-        </button>
-    </div>
-
     <div class="filters-content">
         <div class="filter-group">
             <h3>Nail Shape</h3>
             <div class="filter-options">
                 <label class="filter-option">
-                    <input type="checkbox" name="shape" value="almond">
+                    <input type="checkbox" name="shape" value="Almond">
                     <span>Almond</span>
                 </label>
                 <label class="filter-option">
-                    <input type="checkbox" name="shape" value="square">
+                    <input type="checkbox" name="shape" value="Square">
                     <span>Square</span>
                 </label>
                 <label class="filter-option">
-                    <input type="checkbox" name="shape" value="coffin">
+                    <input type="checkbox" name="shape" value="Coffin">
                     <span>Coffin</span>
                 </label>
                 <label class="filter-option">
-                    <input type="checkbox" name="shape" value="stiletto">
+                    <input type="checkbox" name="shape" value="Stiletto">
                     <span>Stiletto</span>
                 </label>
             </div>
@@ -46,70 +39,66 @@
             <h3>Style</h3>
             <div class="filter-options">
                 <label class="filter-option">
-                    <input type="checkbox" name="style" value="minimalist">
+                    <input type="checkbox" name="style" value="Minimalist">
                     <span>Minimalist</span>
                 </label>
                 <label class="filter-option">
-                    <input type="checkbox" name="style" value="floral">
+                    <input type="checkbox" name="style" value="Floral">
                     <span>Floral</span>
                 </label>
                 <label class="filter-option">
-                    <input type="checkbox" name="style" value="geometric">
+                    <input type="checkbox" name="style" value="Geometric">
                     <span>Geometric</span>
                 </label>
                 <label class="filter-option">
-                    <input type="checkbox" name="style" value="abstract">
-                    <span>Abstract</span>
+                    <input type="checkbox" name="style" value="Glitter">
+                    <span>Glitter</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" name="style" value="French">
+                    <span>French</span>
                 </label>
             </div>
         </div>
 
         <div class="filter-group">
             <h3>Color</h3>
-            <div class="filter-options color-options">
-                <label class="color-option">
-                    <input type="checkbox" name="color" value="pink">
-                    <span class="color-dot pink"></span>
+            <div class="filter-options">
+                <label class="filter-option">
+                    <input type="checkbox" name="color" value="Pink">
+                    <span class="color-dot" style="background:#ff69b4;"></span>
                     <span>Pink</span>
                 </label>
-                <label class="color-option">
-                    <input type="checkbox" name="color" value="purple">
-                    <span class="color-dot purple"></span>
-                    <span>Purple</span>
+                <label class="filter-option">
+                    <input type="checkbox" name="color" value="Red">
+                    <span class="color-dot" style="background:#ff4d4d;"></span>
+                    <span>Red</span>
                 </label>
-                <label class="color-option">
-                    <input type="checkbox" name="color" value="nude">
-                    <span class="color-dot nude"></span>
+                <label class="filter-option">
+                    <input type="checkbox" name="color" value="Blue">
+                    <span class="color-dot" style="background:#4d79ff;"></span>
+                    <span>Blue</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" name="color" value="Nude">
+                    <span class="color-dot" style="background:#f5e2ce;"></span>
                     <span>Nude</span>
                 </label>
-                <label class="color-option">
-                    <input type="checkbox" name="color" value="red">
-                    <span class="color-dot red"></span>
-                    <span>Red</span>
+                <label class="filter-option">
+                    <input type="checkbox" name="color" value="Black">
+                    <span class="color-dot" style="background:#222;"></span>
+                    <span>Black</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" name="color" value="White">
+                    <span class="color-dot" style="background:#fff; border:1px solid #ccc;"></span>
+                    <span>White</span>
                 </label>
             </div>
         </div>
 
-        <div class="filter-group">
-            <h3>Occasion</h3>
-            <div class="filter-options">
-                <label class="filter-option">
-                    <input type="checkbox" name="occasion" value="wedding">
-                    <span>Wedding</span>
-                </label>
-                <label class="filter-option">
-                    <input type="checkbox" name="occasion" value="party">
-                    <span>Party</span>
-                </label>
-                <label class="filter-option">
-                    <input type="checkbox" name="occasion" value="casual">
-                    <span>Casual</span>
-                </label>
-                <label class="filter-option">
-                    <input type="checkbox" name="occasion" value="holiday">
-                    <span>Holiday</span>
-                </label>
-            </div>
+        <div class="filter-apply">
+             <button id="applyFiltersBtn" class="load-more-btn" style="width: 100%;">Apply Filters</button>
         </div>
     </div>
 </div>
@@ -139,41 +128,16 @@
         </section>
 
         <section class="gallery-section">
-            <div class="gallery-grid">
-                {% for item in nail_arts %}
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="{{ item.img }}" alt="{{ item.title }}">
-                        <div class="gallery-overlay">
-                            <form method="post" action="{% if item.id in collections %}{{ url_for('main.uncollect') }}{% else %}{{ url_for('main.collect') }}{% endif %}">
-                                <input type="hidden" name="nail_id" value="{{ item.id }}">
-                                <button type="submit" class="save-btn">
-                                    {% if item.id in collections %}
-                                        <i class="fas fa-bookmark"></i>
-                                    {% else %}
-                                        <i class="far fa-bookmark"></i>
-                                    {% endif %}
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="gallery-info">
-                        <h3>{{ item.title }}</h3>
-                        <div class="gallery-tags">
-                            {% for tag in item.tags %}
-                                <span class="tag">{{ tag }}</span>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
+            <div id="galleryGrid" class="gallery-grid">
+                <!-- 图片将由JS动态渲染 -->
             </div>
             <div class="load-more">
-                <button class="load-more-btn">Load More</button>
+                <button id="loadMoreBtn" class="load-more-btn">Explore More</button>
             </div>
         </section>
     </div>
 </div>
+
 {% endblock %}
 
 {% block scripts %}
@@ -184,33 +148,34 @@
         const openFiltersBtn = document.getElementById('openFilters');
         const closeFiltersBtn = document.getElementById('closeFilters');
 
-        openFiltersBtn.addEventListener('click', function() {
-            filterSidebar.classList.add('active');
-        });
-
-        closeFiltersBtn.addEventListener('click', function() {
-            filterSidebar.classList.remove('active');
-        });
-
-        // Like button functionality
-        document.querySelectorAll('.like-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const icon = this.querySelector('i');
-                icon.classList.toggle('far');
-                icon.classList.toggle('fas');
-                icon.classList.toggle('liked');
+        // Check if filter elements exist before adding listeners
+        if (filterSidebar && openFiltersBtn && closeFiltersBtn) {
+            openFiltersBtn.addEventListener('click', function() {
+                console.log('Open Filters button clicked.'); // Added log
+                filterSidebar.classList.add('active');
             });
-        });
 
-        // Save button functionality
-        document.querySelectorAll('.save-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const icon = this.querySelector('i');
-                icon.classList.toggle('far');
-                icon.classList.toggle('fas');
-                icon.classList.toggle('saved');
+            closeFiltersBtn.addEventListener('click', function() {
+                console.log('Close Filters button clicked.'); // Added log
+                filterSidebar.classList.remove('active');
             });
-        });
+
+            // Add event listener for the new Apply Filters button
+            const applyFiltersBtn = document.getElementById('applyFiltersBtn');
+            if (applyFiltersBtn) {
+                applyFiltersBtn.addEventListener('click', function() {
+                    console.log('Apply Filters button clicked.'); // Log button click
+                    // Close filter sidebar by removing the active class
+                    filterSidebar.classList.remove('active'); // Modified closing logic
+
+                    currentPage = 1; // Reset to first page on new filter application
+                    loadImages(1, true); // Load images with new filters
+                });
+            }
+        }
+
+        // Note: Like and Save button functionality is now handled by the dynamic rendering in main.js
+        // The event listeners for .like-btn and .save-btn are added after images are rendered.
     });
 </script>
 {% endblock %} 

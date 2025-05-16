@@ -10,6 +10,7 @@ body {
     line-height: 1.6;
     background-color: #f8f9fa;
     overflow-x: hidden;
+    padding-top: 70px; /* Add padding to the top, adjust based on navbar height */
 }
 
 /* Container */
@@ -22,13 +23,21 @@ body {
 /* Navigation */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Keep space-between to push brand left and auth right */
     align-items: center;
     background-color: #fff;
     padding: 1rem 2rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
     z-index: 1000;
+}
+
+.nav-brand {
+    flex-shrink: 0;
+    margin-right: auto; /* Push brand to the left */
+    /* Ensure no fixed margin interferes */
 }
 
 .nav-brand a {
@@ -44,12 +53,24 @@ body {
 .nav-links {
     display: flex;
     gap: 2rem;
+    flex-grow: 1; /* Allow nav-links to grow and take available space */
+    justify-content: center; /* Center the links within the nav-links div */
+    flex-shrink: 0;
+    /* Ensure no absolute positioning or transform interferes */
+    position: static;
+    left: auto;
+    transform: none;
+    margin: 0 auto; /* Add auto margins to self-center within flex container if space allows */
+    max-width: fit-content; /* Prevent excessive growth that might push others */
 }
 
 .nav-auth {
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex-shrink: 0;
+    margin-left: auto; /* Push auth links to the right */
+    /* Ensure no fixed margin interferes */
 }
 
 .nav-link {
@@ -73,6 +94,15 @@ body {
 
 .nav-link.highlight:hover {
     background-color: #ff4d94;
+}
+
+/* Style for active navigation link */
+.nav-link.active {
+    color: #ff69b4; /* Highlight color */
+    font-weight: bold; /* Make it bold */
+    /* You can add a border-bottom or background here as well */
+     border-bottom: 2px solid #ff69b4; /* Example: Add a pink underline */
+     padding-bottom: 4px; /* Space between text and underline */
 }
 
 /* Filter Sidebar */
@@ -505,4 +535,81 @@ footer {
 
 .save-btn .fa-bookmark {
     color: #ff69b4 !important; /* pink */
+}
+
+/* Add basic styles for modals */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top, higher than navbar */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px; /* Location of the box */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 5% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px; /* Max width for larger screens */
+    border-radius: 8px;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style for error messages within modals */
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* Add some basic styling for modal forms */
+.modal-content form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.modal-content form input[type="email"],
+.modal-content form input[type="password"] {
+    width: calc(100% - 22px); /* Adjust for padding and border */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-content form button[type="submit"] {
+    background-color: #ff69b4;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content form button[type="submit"]:hover {
+    background-color: #ff4d94;
 } 

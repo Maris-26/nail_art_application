@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=D:\4.UW-MSTI\课程\510 Programming For Digital And Physical User Interfaces\Final\nail_art_application\venv
+set VIRTUAL_ENV=D:\4.UW-MSTI\Course\510 Programming For Digital And Physical User Interfaces\Final\nail_art_application\venv
 
 if not defined PROMPT set PROMPT=$P$G
 

@@ -1,0 +1,142 @@
+[
+  {
+    "img_url": "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDYxMjB8MHwxfHNlYXJjaHwxfHxuYWlsJTIwYXJ0fGVufDB8fHx8MTc0NzQzMjU0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    "name": "Magic Chic Dream",
+    "shape": "Stiletto",
+    "style": "Geometric",
+    "color": "Red"
+  },
+  {
+    "img_url": "https://images.unsplash.com/photo-1604902396830-aca29e19b067?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDYxMjB8MHwxfHNlYXJjaHwyfHxuYWlsJTIwYXJ0fGVufDB8fHx8MTc0NzQzMjU0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    "name": "Muse Crystal Lively",
+    "shape": "Stiletto",
+    "style": "Minimalist",
+    "color": "Nude"
+  },
+  {
+    "img_url": "https://images.unsplash.com/photo-1619607146034-5a05296c8f9a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDYxMjB8MHwxfHNlYXJjaHwzfHxuYWlsJTIwYXJ0fGVufDB8fHx8MTc0NzQzMjU0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    "name": "Shine Classic Glam",
+    "shape": "Square",
+    "style": "Minimalist",
+    "color": "Nude"
+  },
+  {
+    "img_url": "https://images.unsplash.com/photo-1566423027823-1241024d04c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDYxMjB8MHwxfHNlYXJjaHw0fHxuYWlsJTIwYXJ0fGVufDB8fHx8MTc0NzQzMjU0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    "name": "Lively Sparkle",
+    "shape": "Coffin",
+    "style": "Floral",
+    "color": "White"
+  },
+  {
+    "img_url": "https://images.unsplash.com/photo-1556139943-4bdca53adf1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDYxMjB8MHwxfHNlYXJjaHw1fHxuYWlsJTIwYXJ0fGVufDB8fHx8MTc0NzQzMjU0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    "name": "Glam Velvet",
+    "shape": "Stiletto",
+    "style": "Floral",
+    "color": "Pink"
+  },
+  {
+    "img_url": "https://images.unsplash.com/photo-1618606679166-7f313aa5b26f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDYxMjB8MHwxfHNlYXJjaHw2fHxuYWlsJTIwYXJ0fGVufDB8fHx8MTc0NzQzMjU0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    "name": "Classic Shine Chic",
+    "shape": "Stiletto",
+    "style": "Minimalist",
+    "color": "Red"
+  },
+  {
+    "img_url": "https://images.unsplash.com/photo-1571290274554-6a2eaa771e5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDYxMjB8MHwxfHNlYXJjaHw3fHxuYWlsJTIwYXJ0fGVufDB8fHx8MTc0NzQzMjU0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    "name": "Soft Dream",
+    "shape": "Almond",
+    "style": "Geometric",
+    "color": "White"
+  },
+  {
+    "img_url": "https://images.unsplash.com/photo-1618606406106-eeb552f167a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDYxMjB8MHwxfHNlYXJjaHw4fHxuYWlsJTIwYXJ0fGVufDB8fHx8MTc0NzQzMjU0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    "name": "Chic Grace",
+    "shape": "Stiletto",
+    "style": "Geometric",
+    "color": "Red"
+  },
+  {
+    "img_url": "https://images.unsplash.com/photo-1636019411480-58321fcb11ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDYxMjB8MHwxfHNlYXJjaHw5fHxuYWlsJTIwYXJ0fGVufDB8fHx8MTc0NzQzMjU0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    "name": "Dazzle Lively Dream",
+    "shape": "Stiletto",
+    "style": "French",
+    "color": "Blue"
+  },
+  {
+    "img_url": "https://images.unsplash.com/photo-1636757392031-d5079eec8c41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDYxMjB8MHwxfHNlYXJjaHwxMHx8bmFpbCUyMGFydHxlbnwwfHx8fDE3NDc0MzI1NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "name": "Glam Dazzle Chic",
+    "shape": "Stiletto",
+    "style": "Geometric",
+    "color": "Nude"
+  },
+  {
+    "img_url": "https://images.unsplash.com/photo-1554755229-ca4470e07232?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDYxMjB8MHwxfHNlYXJjaHwxMXx8bmFpbCUyMGFydHxlbnwwfHx8fDE3NDc0MzI1NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "name": "Soft Crystal Modern",
+    "shape": "Almond",
+    "style": "French",
+    "color": "Pink"
+  },
+  {
+    "img_url": "https://images.unsplash.com/photo-1616427592831-3f5c7f7a7a85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDYxMjB8MHwxfHNlYXJjaHwxMnx8bmFpbCUyMGFydHxlbnwwfHx8fDE3NDc0MzI1NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "name": "Crystal Shine Muse",
+    "shape": "Stiletto",
+    "style": "French",
+    "color": "Nude"
+  },
+  {
+    "img_url": "https://images.unsplash.com/photo-1636019411401-82485711b6ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDYxMjB8MHwxfHNlYXJjaHwxM3x8bmFpbCUyMGFydHxlbnwwfHx8fDE3NDc0MzI1NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "name": "Modern Chic Bliss",
+    "shape": "Stiletto",
+    "style": "Geometric",
+    "color": "Blue"
+  },
+  {
+    "img_url": "https://images.unsplash.com/photo-1636019410117-1277a50f9c21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDYxMjB8MHwxfHNlYXJjaHwxNHx8bmFpbCUyMGFydHxlbnwwfHx8fDE3NDc0MzI1NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "name": "Sparkle Chic",
+    "shape": "Square",
+    "style": "French",
+    "color": "Blue"
+  },
+  {
+    "img_url": "https://images.unsplash.com/photo-1602585578130-c9076e09330d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDYxMjB8MHwxfHNlYXJjaHwxNXx8bmFpbCUyMGFydHxlbnwwfHx8fDE3NDc0MzI1NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "name": "Modern Bliss",
+    "shape": "Square",
+    "style": "Minimalist",
+    "color": "Nude"
+  },
+  {
+    "img_url": "https://images.unsplash.com/photo-1534386740082-3ea2044d1446?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDYxMjB8MHwxfHNlYXJjaHwxNnx8bmFpbCUyMGFydHxlbnwwfHx8fDE3NDc0MzI1NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "name": "Crystal Chic",
+    "shape": "Coffin",
+    "style": "Geometric",
+    "color": "Black"
+  },
+  {
+    "img_url": "https://images.unsplash.com/photo-1498843053639-170ff2122f35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDYxMjB8MHwxfHNlYXJjaHwxN3x8bmFpbCUyMGFydHxlbnwwfHx8fDE3NDc0MzI1NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "name": "Lush Dream Shine",
+    "shape": "Stiletto",
+    "style": "Minimalist",
+    "color": "Pink"
+  },
+  {
+    "img_url": "https://images.unsplash.com/photo-1642330436095-def00b988d6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDYxMjB8MHwxfHNlYXJjaHwxOHx8bmFpbCUyMGFydHxlbnwwfHx8fDE3NDc0MzI1NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "name": "Shine Chic Lush",
+    "shape": "Stiletto",
+    "style": "Geometric",
+    "color": "Red"
+  },
+  {
+    "img_url": "https://images.unsplash.com/photo-1628610726537-6e9d2799f871?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDYxMjB8MHwxfHNlYXJjaHwxOXx8bmFpbCUyMGFydHxlbnwwfHx8fDE3NDc0MzI1NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "name": "Chic Bloom Muse",
+    "shape": "Almond",
+    "style": "Geometric",
+    "color": "Nude"
+  },
+  {
+    "img_url": "https://images.unsplash.com/photo-1609309267394-9d7b8e01bfe0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDYxMjB8MHwxfHNlYXJjaHwyMHx8bmFpbCUyMGFydHxlbnwwfHx8fDE3NDc0MzI1NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "name": "Sparkle Lush",
+    "shape": "Stiletto",
+    "style": "Glitter",
+    "color": "Pink"
+  }
+]
