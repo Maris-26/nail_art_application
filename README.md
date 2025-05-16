@@ -129,6 +129,8 @@ nail_art_application/
 ├── .gitignore         # Git ignore file
 ├── app.py             # Application entry point
 ├── requirements.txt   # Project dependencies
+├── generate_tags_clip.py  # Script for generating image tags using CLIP
+├── tags.json          # Local data source for image tags and details
 └── README.md         # Project documentation
 ```
 
