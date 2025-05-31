@@ -13,4 +13,8 @@ MarkupSafe==2.1.5
 python-dotenv==1.0.1
 
 # Testing
-pytest>=6.2.0 
+pytest>=6.2.0
+
+# Azure deployment
+gunicorn
+nginx 
