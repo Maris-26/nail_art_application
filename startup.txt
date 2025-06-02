@@ -1,0 +1,2 @@
+nginx
+gunicorn app.app:app 
