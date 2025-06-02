@@ -70,7 +70,7 @@ This project focuses on building a user-friendly static web application for brow
 
 ## 👤 Target Users
 
-The intended users are nail art enthusiasts and designers looking for inspiration and a way to organize ideas locally. ovo
+The intended users are nail art enthusiasts and designers looking for inspiration and a way to organize ideas locally. 
 
 ---
 
