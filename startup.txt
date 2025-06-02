@@ -1,2 +1,1 @@
-nginx
-gunicorn app.app:app 
+PYTHONPATH=. gunicorn app.app:app
