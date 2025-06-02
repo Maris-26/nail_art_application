@@ -60,11 +60,22 @@ def main():
     print(f"Using device: {device}")
     model, preprocess = clip.load("ViT-B/32", device=device)
 
-    images = fetch_unsplash_images(page=1, per_page=20)
+    all_images = []
+    # Fetch 100 images by making multiple calls (requesting more pages)
+    for page in range(1, 11): # Fetch 10 pages of 50 images each
+        print(f"Fetching images page {page}...")
+        images = fetch_unsplash_images(page=page, per_page=50)
+        print(f"Fetched {len(images)} images from page {page}.")
+        all_images.extend(images)
+        print(f"Total images collected so far: {len(all_images)}")
+
     results = []
-    for idx, img_url in enumerate(images):
-        print(f"Processing image {idx+1}/{len(images)}...")
+    # Process a maximum of 100 images
+    print(f"Processing a maximum of {min(len(all_images), 100)} images.")
+    for idx, img_url in enumerate(all_images[:100]):
+        print(f"Processing image {idx+1}/{min(len(all_images), 100)}...")
         name = generate_name()
+        # Classify with CLIP - ensure model, preprocess, device are passed
         shape = classify_with_clip(model, preprocess, device, img_url, SHAPES)
         style = classify_with_clip(model, preprocess, device, img_url, STYLES)
         color = classify_with_clip(model, preprocess, device, img_url, COLORS)

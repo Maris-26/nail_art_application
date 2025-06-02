@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nail Art Recommendation</title>
+    <title>Collections - Nail Art Recommendation</title>
     <link rel="stylesheet" href="/static/css/style.css">
     <!-- Add Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -25,9 +25,19 @@
     </header>
 
     <main>
-        <!-- {% block content %} -->
-        <!-- {% endblock %} -->
-        <!-- 在静态网站中，内容将直接放在这里或通过其他方式加载 -->
+        <div class="container">
+            <section class="hero-section">
+                <h1>My Collections</h1>
+                <p>View your saved nail art designs.</p>
+            </section>
+
+            <section class="gallery-section">
+                <div id="collectionsGrid" class="gallery-grid">
+                    <!-- 收藏的图片将由JS动态渲染 -->
+                </div>
+                 <p id="noCollectionsMessage" style="text-align: center; display: none;">You haven't added any items to your collection yet.</p>
+            </section>
+        </div>
     </main>
 
     <footer>
@@ -54,7 +64,6 @@
         </div>
     </footer>
 
-    <script src="/static/js/main.js"></script>
-    <!-- {% block scripts %}{% endblock %} -->
+    <script src="/static/js/collections.js"></script>
 </body>
 </html> 

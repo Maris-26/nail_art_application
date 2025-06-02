@@ -37,7 +37,6 @@ body {
 .nav-brand {
     flex-shrink: 0;
     margin-right: auto; /* Push brand to the left */
-    /* Ensure no fixed margin interferes */
 }
 
 .nav-brand a {
@@ -53,15 +52,15 @@ body {
 .nav-links {
     display: flex;
     gap: 2rem;
-    flex-grow: 1; /* Allow nav-links to grow and take available space */
+    flex-grow: 1;
     justify-content: center; /* Center the links within the nav-links div */
+    align-items: center; /* Vertically center links */
     flex-shrink: 0;
-    /* Ensure no absolute positioning or transform interferes */
     position: static;
     left: auto;
     transform: none;
-    margin: 0 auto; /* Add auto margins to self-center within flex container if space allows */
-    max-width: fit-content; /* Prevent excessive growth that might push others */
+    /* Removed auto margins here */
+    max-width: none; /* Allow nav-links to take full available space */
 }
 
 .nav-auth {
@@ -331,159 +330,132 @@ body {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    gap: 20px;
+    /* padding: 20px 0; Remove padding if container already has it */
 }
 
 .gallery-item {
-    background: white;
-    border-radius: 10px;
+    background-color: #fff;
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    position: relative; /* Needed for absolute positioning of overlay and button */
+    display: flex; /* Use flex to arrange content easily */
+    flex-direction: column;
+    cursor: pointer;
+
+    /* Aspect Ratio Container (2:3 Height/Width) */
+    width: 100%; /* Take full width of grid column */
+    padding-top: 150%; /* 3 / 2 = 1.5. 150% of width */
 }
 
-.gallery-item:hover {
-    transform: translateY(-5px);
-}
-
-.gallery-image {
-    position: relative;
-    padding-top: 133.33%; /* 3:4 aspect ratio */
-}
-
-.gallery-image img {
+.gallery-item img {
+    /* Absolute position and size to fit the aspect ratio container */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Cover the container, maintaining aspect ratio */
+    display: block; /* Ensure no extra space below */
 }
 
-.gallery-overlay {
+.overlay {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    color: white;
     display: flex;
-    gap: 0.5rem;
+    flex-direction: column;
+    justify-content: flex-end; /* Align info to the bottom */
+    padding: 15px;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Allow clicks to pass through overlay to button/image */
 }
 
-.gallery-overlay button {
-    background: white;
+.gallery-item:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+/* Save button styling */
+.save-btn {
+    position: absolute; /* Position relative to the gallery-item */
+    top: 10px; /* 10px from the top edge */
+    left: 10px; /* 10px from the left edge */
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    color: #ff69b4; /* Pink color for the icon */
     border: none;
-    width: 35px;
+    border-radius: 50%; /* Make it round */
+    width: 35px; /* Button size */
     height: 35px;
-    border-radius: 50%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    z-index: 2; /* Ensure it's above the image and overlay */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    pointer-events: auto; /* Make button clickable */
 }
 
-.gallery-overlay button:hover {
-    transform: scale(1.1);
+.save-btn:hover {
+    background-color: #ff69b4; /* Pink background on hover */
+    color: white; /* White icon on hover */
 }
 
-.gallery-info {
-    padding: 1rem;
-}
-
-.gallery-info h3 {
-    margin-bottom: 0.5rem;
-    color: #333;
-    font-size: 1rem;
-}
-
-.gallery-tags {
+/* Remove button styling (for collections page) */
+.remove-btn {
+    position: absolute; /* Position relative to the gallery-item */
+    top: 10px; /* 10px from the top edge */
+    left: 10px; /* 10px from the left edge */
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    color: #dc3545; /* Red color for the icon (e.g., for remove) */
+    border: none;
+    border-radius: 50%; /* Make it round */
+    width: 35px; /* Button size */
+    height: 35px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.tag {
-    background: #f0f0f0;
-    padding: 0.25rem 0.5rem;
-    border-radius: 10px;
-    font-size: 0.8rem;
-    color: #666;
-}
-
-.load-more {
-    text-align: center;
-}
-
-.load-more-btn {
-    background: transparent;
-    border: 2px solid #ff69b4;
-    color: #ff69b4;
-    padding: 0.75rem 2rem;
-    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    z-index: 2; /* Ensure it's above the image and overlay */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    pointer-events: auto; /* Make button clickable */
 }
 
-.load-more-btn:hover {
-    background: #ff69b4;
-    color: white;
+.remove-btn:hover {
+    background-color: #dc3545; /* Red background on hover */
+    color: white; /* White icon on hover */
 }
 
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 3rem 0 1rem;
-    margin-top: 2rem;
+/* Optional: Adjustments for the info text within the overlay */
+.item-info {
+    pointer-events: none; /* Info text should not interfere with clicks */
 }
 
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
+.item-info h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
 }
 
-.footer-section h3 {
-    margin-bottom: 1rem;
+.item-info p {
+    margin-bottom: 3px;
+    font-size: 0.9rem;
+    color: #eee;
 }
 
-.social-links {
-    display: flex;
-    gap: 1rem;
-}
+/* Ensure main content has enough margin if sidebar is open - keep existing */
+/* .main-content.shifted { margin-left: 320px; } */ /* No longer needed as sidebar doesn't push content */
 
-.social-links a {
-    color: white;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #ff69b4;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-/* Icons */
-.liked {
-    color: #ff69b4;
-}
-
-.saved {
-    color: #ff69b4;
-}
-
-/* Responsive Design */
+/* Responsive adjustments - keep existing relevant rules */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -495,6 +467,7 @@ footer {
     
     .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
     }
     
     .filter-sidebar {
@@ -530,6 +503,23 @@ footer {
     
     .filter-sidebar {
         width: 100%;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+    }
+    
+    .gallery-item {
+        padding-top: 150%; /* Maintain 2:3 aspect ratio */
+    }
+    
+    .save-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+        top: 5px;
+        left: 5px;
     }
 }
 
@@ -612,4 +602,77 @@ footer {
 
 .modal-content form button[type="submit"]:hover {
     background-color: #ff4d94;
+}
+
+/* Load More */
+.load-more {
+    text-align: center; /* Center the button horizontally */
+    margin-top: 20px;
+    margin-bottom: 80px; /* Increased space below */
+    width: 100%; /* Ensure it takes full width to center content */
+}
+
+.load-more-btn {
+    background-color: #ff69b4; /* Pink background */
+    color: white; /* White text */
+    padding: 12px 24px; /* Increased padding */
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.load-more-btn:hover {
+    background-color: #ff4d94; /* Darker pink on hover */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 3rem 20px 1rem; /* Add horizontal padding */
+    margin-top: 40px; /* Add some space above */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto; /* Center footer content */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust min width */
+    gap: 20px; /* Adjust gap */
+    padding-bottom: 2rem; /* Space above bottom text */
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Add separator */
+    margin-bottom: 1rem; /* Space below separator */
+}
+
+.footer-section {
+    /* Ensure sections take equal space or are aligned */
+}
+
+.footer-section h3 {
+    margin-bottom: 10px; /* Adjust margin */
+    font-size: 1.1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px; /* Adjust gap */
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.4rem; /* Adjust icon size */
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ff69b4; /* Pink on hover */
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #ccc; /* Lighter color */
 } 
